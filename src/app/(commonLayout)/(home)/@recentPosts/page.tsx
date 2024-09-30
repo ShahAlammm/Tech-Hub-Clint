@@ -1,11 +1,17 @@
-import PostCardSkeleton from '@/src/components/Post/PostCardSkeleton';
-import React from 'react';
+"use client"
+import PostCard from '@/src/components/Post/PostCard';
+import { getRecentPosts } from '@/src/services/RecentPosts';
 
-const RecentPost = () => {
+
+
+const RecentPost = async () => {
+
+    const data = await getRecentPosts();
+    console.log(data)
     return (
-        <div>
-            {[...Array(3)].map(() => (
-                <PostCardSkeleton />
+        <div className='space-y-2'>
+            {data?.map((item) => (
+                <PostCard post={item} key={item?._id} />
             ))}
         </div>
     );

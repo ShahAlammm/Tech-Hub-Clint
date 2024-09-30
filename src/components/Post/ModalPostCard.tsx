@@ -4,12 +4,12 @@ import { Button } from "@nextui-org/button";
 import { Link } from "@nextui-org/link";
 import ImageGallery from "../ui/ImageGallery";
 import { format } from 'date-fns';
-import { CalendarDays, MessageCircle, ThumbsUp } from "lucide-react";
+import { CalendarDays, ThumbsUp } from "lucide-react";
 import { IUser } from "@/src/types";
 import { Divider } from "@nextui-org/divider";
 import CommentModal from "../Modals/CommentModal";
 
-const PostCard = ({ post }: any) => {
+const ModalPostCard = ({ post }: any) => {
     const {
         title,
         description,
@@ -21,7 +21,7 @@ const PostCard = ({ post }: any) => {
     } = post || {};
     const { name, email, profilePhoto } = (user as IUser) || {};
     return (
-        <div className="rounded-md bg-default-100 p-4 pb-2">
+        <div className="rounded-md  p-4 pb-2">
             <div>
                 <div className="flex items-center justify-between border-b border-default-200 pb-4">
                     <div className="flex items-center gap-3">
@@ -69,14 +69,14 @@ const PostCard = ({ post }: any) => {
                     {email !== loggedInUser?.email && (
                         <div className="w-[1px] bg-default-200" />
                     )} */}
-                    <Button variant="light" className="flex-1">
+                    {/* <Button variant="light" className="flex-1">
                         <ThumbsUp />
                     </Button>
-                    <CommentModal post={post} />
+                    <CommentModal post={post} /> */}
                 </div>
             </div>
         </div>
     );
 };
 
-export default PostCard;
+export default ModalPostCard;

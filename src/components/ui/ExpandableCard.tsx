@@ -39,7 +39,7 @@ export function ExpandableCardDemo() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 bg-black/20 h-full w-full z-10"
+                        className="fixed inset-0 bg-black/20 h-full w-full z-50"
                     />
                 )}
             </AnimatePresence>
@@ -69,7 +69,7 @@ export function ExpandableCardDemo() {
                         <motion.div
                             layoutId={`card-${active.title}-${id}`}
                             ref={ref}
-                            className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+                            className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-white dark:bg-neutral-900 sm:rounded-3xl overflow-hidden z-30"
                         >
                             <motion.div layoutId={`image-${active.title}-${id}`}>
                                 <Image
@@ -132,7 +132,7 @@ export function ExpandableCardDemo() {
                         layoutId={`card-${card.title}-${id}`}
                         key={`card-${card.title}-${id}`}
                         onClick={() => setActive(card)}
-                        className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
+                        className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer z-50"
                     >
                         <div className="flex gap-4 flex-col md:flex-row ">
                             <motion.div layoutId={`image-${card.title}-${id}`}>
